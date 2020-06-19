@@ -33,7 +33,7 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 <details> 
   <summary>So what tools/libraries/modules can we use in Python to automate this process?</summary>
 
->This [module](https://docs.python.org/3/library/subprocess.html) will let us command line arguments in our python script
+>This [module](https://docs.python.org/3/library/subprocess.html) will let us use command line arguments in our python script
 > How do we get user input?
 
 </details>
