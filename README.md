@@ -8,7 +8,8 @@ Python Black Hat Tutorials and Scripts to get you started with your adventure in
 <details> 
   <summary>Why do we want to spoof a MAC Address?</summary>
 
-Spoofing a MAC Address allow us to  bypass certain access control lists 
+
+Spoofing a MAC Address allows us to  bypass certain access control lists 
 </details>
 
 **How Can We Change Our MAC from the Linux CL?**
