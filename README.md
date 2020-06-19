@@ -15,17 +15,20 @@ Spoofing a MAC Address allow us to  bypass certain access control lists
 
 1. Check our MAC Address
 
-![ifconfig](./ifconfig.png)
+![ifconfig](./image/ifconfig.png)
 
     note my interface is eth0 and my MAC Address 08:00:27:23:ff:90
 
 2. Linux Commands to change our MAC 
 
-![ifconfig](./manualChange.png)
+![ifconfig](./image/manualChange.png)
 
 3. Confirm our MAC was changed
 
-![ifconfig](./changedMac.png)
+![ifconfig](./image/changedMac.png)
+    My new MAC address is 
+    
+    66:55:44:33:22:11
 
 <details> 
   <summary>So what tools/libraries/modules can we use in Python to automate this process?</summary>
