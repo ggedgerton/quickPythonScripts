@@ -11,12 +11,31 @@ Python Black Hat Tutorials and Scripts to get you started with your adventure in
 Spoofing a MAC Address allow us to  bypass certain access control lists 
 </details>
 
-**Manually Change Our MAC Address FROM CLI**
+**How Can We Change Our MAC from the Linux CL?**
 
+1. Check our MAC Address
 
-*Python Scripting Helpful tools*
+![ifconfig](./ifconfig.png)
 
+    note my interface is eth0 and my MAC Address 08:00:27:23:ff:90
 
+2. Linux Commands to change our MAC 
+
+![ifconfig](./manualChange.png)
+
+3. Confirm our MAC was changed
+
+![ifconfig](./changedMac.png)
+
+<details> 
+  <summary>So what tools/libraries/modules can we use in Python to automate this process?</summary>
+
+>This [module](https://docs.python.org/3/library/subprocess.html) will let us command line arguments in our python script
+> How do we get user input?
+
+</details>
+
+[Mac Changer Script](/MACchanger.py)
 
 <details> 
   <summary>Besides the obvious <i>allows us to bypass ACL</i>, why would a hack spoof a MAC address?</summary>
