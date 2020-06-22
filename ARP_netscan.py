@@ -26,4 +26,4 @@ def py_scan(ip):
         print(response[1].psrc + "\t\t" + response[1].hwsrc)
         print("-------------------------------------------")
 
-py_scan("10.0.2.1/24")
+py_scan("192.168.56.0/24")
