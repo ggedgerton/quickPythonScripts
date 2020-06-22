@@ -65,12 +65,15 @@ Now that we have a few devices to target it, let's use an ARP attack to see what
 > An attacker will target the subnet IP of a target so other devices will confuse the attacker and target, sending data to the attacker instead. It's a way to steal confdential data.
 </details>
 
-The reason this works is because cients accept response even if they did not send a request, and clients do not verify the ARP responses.
+The reason this works is because clients accept responses even if they did not send a request, and clients do not verify the ARP responses.
 
+Please note this script needs to be run against other clients that share our same IP default gateway address. A quick way to check our default gateway is
 
+    ip route | grep default
 
+Note that in this example I am attacking another one of my own clients. This is not to be used on a machine that you do not own.
 
-
+[ARP Spoofer Script](/arp_spoof.py)
 ***
 
 ## Mac Address Spoofing
