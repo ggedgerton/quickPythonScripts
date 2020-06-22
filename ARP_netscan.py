@@ -3,6 +3,8 @@
 
 # scapy module lets us work with network packets
 import scapy.all as scapy
+
+
 def py_scan(ip):
 
     # what subnet are we scanning?
