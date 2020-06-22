@@ -4,18 +4,19 @@ Three scripts to get you started with your adventure into the world of Cyber Sec
 
 ***
 
-### So where do we start?
+### So where do we start
+
 1. **Network Scanning** with Python
-  
+
   - First we want to see what's out there on the network
 
 2. **ARP Spoofing** with Python
 
-  - This is a man in the middle attack on confidentiality and a great way to get blaclisted on ACLs, so...
+- This is a man in the middle attack on confidentiality and a great way to get blaclisted on ACLs, so...
 
 3. **MAC Address Spoofing** with Python
 
-  - So we got caught ARP spoofing and now we want to try again, let's change our MAC and get back at it
+- So we got caught ARP spoofing and now we want to try again, let's change our MAC and get back at it
 
 - - -
 
@@ -63,6 +64,9 @@ Now that we have a few devices to target it, let's use an ARP attack to see what
 
 > An attacker will target the subnet IP of a target so other devices will confuse the attacker and target, sending data to the attacker instead. It's a way to steal confdential data.
 </details>
+
+The reason this works is because cients accept response even if they did not send a request, and clients do not verify the ARP responses.
+
 
 
 
