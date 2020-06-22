@@ -16,10 +16,14 @@ def py_scan(ip):
 
     # Now lets catch the responses in a variable
     # note that we timeout after one second so our script doesnt just hang, waiting for a response
-    responses, ignored = scapy.srp(arp_request_packet, timeout=1)
+    responses = scapy.srp(arp_request_packet, timeout=1)[0]
 
     # lets see who responded with a scapy function called .summary()
-    print(responses.summary())
-
+    # print(responses.summary())
+    print('\n')
+    print("IP\t\t\tAt MAC Address\n-------------------------------------------")
+    for response in responses:
+        print(response[1].psrc + "\t\t" + response[1].hwsrc)
+        print("-------------------------------------------")
 
 py_scan("10.0.2.1/24")
