@@ -12,7 +12,7 @@ Three scripts to get you started with your adventure into the world of Cyber Sec
 
 2. **ARP Spoofing** with Python
 
-- This is a man in the middle attack on confidentiality and a great way to get blaclisted on ACLs, so...
+- This is a man in the middle attack on confidentiality and a great way to get blacklisted on ACLs, so...
 
 3. **MAC Address Spoofing** with Python
 
@@ -35,11 +35,11 @@ Three scripts to get you started with your adventure into the world of Cyber Sec
 
 ![netdiscover -r subnet](./image/netd_cmd.png)
 
-    Note that we are giving netdiscover out own subent
+    Note that we are giving netdiscover our own subnet
 
 ![netdiscover output](./image/netd_output.png)
 
-    netdiscover outputs the subnet IP and MAC address of other devices on our network
+    netdiscover outputs the subnet IP and MAC addresses of other devices on our network
 
 
 Check out this Python script for [Network Scanning](/ARP_netscan.py)
@@ -71,24 +71,24 @@ Below you will find the break down of an ARP attacker
 
 1. Here is IP address of our attack machine at 10.0.2.15 and our shared gateway router IP at 10.0.2.1
 
-[ARP Attacker](./image/attack_hostname_gatrway.png)
+![ARP Attacker](./image/attack_hostname_gatrway.png)
 
 
 2. When we run an ARP scan from our attack client we find a number of machines, including the one we want to attack
 
-[ARP Scan](./image/arp_scan.png)
+![ARP Scan](./image/arp_scan.png)
 
 
 3. I want to target my own client machine
 
-[ARP Spoof Target](./image/target_ip.png)
+![ARP Spoof Target](./image/target_ip.png)
 
     note that my attack and target clients share the same gateway router
 
 
 4. Now we can launch the attack and gain MitM access
 
-[ARP Attack](./image/spoof_attack.png)
+![ARP Attack](./image/spoof_attack.png)
 
 
 Note that in this example I am attacking another one of my own clients. This is not to be used on a machine that you do not own.
