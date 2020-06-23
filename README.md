@@ -69,7 +69,7 @@ The reason this works is because clients accept responses even if they did not s
 
 Below you will find the break down of an ARP attacker
 
-1. Here is IP address of our attack machine at 10.0.2.15 and our shared gateway router IP at 10.0.2.1
+1. Here is the IP address of my attack machine at 10.0.2.15 and our shared gateway router IP at 10.0.2.1
 
 ![ARP Attacker](./image/attack_hostname_gatrway.png)
 
@@ -79,7 +79,7 @@ Below you will find the break down of an ARP attacker
 ![ARP Scan](./image/arp_scan.png)
 
 
-3. I want to target my own client machine
+3. This is the IP Address of the machine I am targetting. I own this machine, this attack is not to be run on a machine you do not own.
 
 ![ARP Spoof Target](./image/target_ip.png)
 
@@ -91,9 +91,10 @@ Below you will find the break down of an ARP attacker
 ![ARP Attack](./image/spoof_attack.png)
 
 
-Note that in this example I am attacking another one of my own clients. This is not to be used on a machine that you do not own.
+This scripts sends alternating packets to our gateway router and our target machine. We are telling the gateway router to associate the target IP with our MAC and we are telling the target to associate the gateway IP with our MAC. That way traffic flows through us.
 
 [ARP Spoofer Script](/arp_spoof.py)
+
 ***
 
 ## Mac Address Spoofing
