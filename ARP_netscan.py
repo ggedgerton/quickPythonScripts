@@ -17,6 +17,7 @@ def py_scan(ip):
     # Now lets catch the responses in a variable
     # note that we timeout after one second so our script doesnt just hang, waiting for a response
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     responses = scapy.srp(arp_request_packet, timeout=1)[0]
 
     # lets see who responded with a scapy function called .summary()
@@ -29,11 +30,17 @@ def py_scan(ip):
 
 py_scan("10.0.2.0/24")
 =======
+=======
+>>>>>>> Stashed changes
     responses, ignored = scapy.srp(arp_request_packet, timeout=1)
 
     # lets see who responded with a scapy function called .summary()
     print(responses.summary())
 
 
+<<<<<<< Updated upstream
+py_scan("10.0.2.1/24")
+>>>>>>> Stashed changes
+=======
 py_scan("10.0.2.1/24")
 >>>>>>> Stashed changes

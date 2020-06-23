@@ -107,8 +107,12 @@ Note that in this example I am attacking another one of my own clients. This is 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 Spoofing a MAC Address allows us to  bypass certain access control lists 
+=======
+> Spoofing a MAC Address allows us to  bypass certain access control lists 
+>>>>>>> Stashed changes
 =======
 > Spoofing a MAC Address allows us to  bypass certain access control lists 
 >>>>>>> Stashed changes
@@ -167,6 +171,7 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 </details>
 =======
 =======
@@ -191,6 +196,8 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 </details>
 
 ## Netscanning With Python
@@ -205,6 +212,9 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 </details>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -224,6 +234,9 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
