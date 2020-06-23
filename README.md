@@ -1,10 +1,10 @@
-# Black Hat Beginner Python Tutorials
+# Python Tutorials for Security Engineers
 
 Three scripts to get you started with your adventure into the world of Cyber Security
 
 ***
 
-### So where do we start
+## So where do we start
 
 1. **Network Scanning** with Python
 
