@@ -101,40 +101,10 @@ Note that in this example I am attacking another one of my own clients. This is 
 <details> 
   <summary>Why do we want to spoof a MAC Address?</summary>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
 Spoofing a MAC Address allows us to  bypass certain access control lists 
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
-=======
-> Spoofing a MAC Address allows us to  bypass certain access control lists 
->>>>>>> Stashed changes
+
+
 </details>
 
 **How Can We Change Our MAC from the Linux CL?**
@@ -170,19 +140,8 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
   </summary>
 
 > To hide on a network or impersonate another device.
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 </details>
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+ 
 </details>
 
 ## Netscanning With Python
@@ -196,15 +155,7 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 > We are assuming we are already on the network, so we don't need to ask devices if they're up or not with a ping, we can ask them who they are with an ARP request.
 </details>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 </details>
 
 ## Netscanning With Python
@@ -218,44 +169,9 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 > We are assuming we are already on the network, so we don't need to ask devices if they're up or not with a ping, we can ask them who they are with an ARP request.
 </details>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 <details> 
   <summary>Why does the python script broadcast to "ff:ff:ff:ff:ff:ff"?
 </summary>
 
 > When we don't know the MAC address we use the broadcast MAC destination as "ff:ff:ff:ff:ff:ff" as a place holder, so this message will reach all computers on our network. Once we get a reply from a device, we replace "ff:ff:ff:ff:ff:ff" with the known MAC address.
 </details>
-
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
