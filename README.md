@@ -141,37 +141,3 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
 
 > To hide on a network or impersonate another device.
 </details>
- 
-</details>
-
-## Netscanning With Python
-
-*This simple network scanner will function similar to Kali Linux's Net Discover*
-
-<details> 
-  <summary>For this scanner I am going to send out ARP requests instead of pinging. Why is this preferrable in this instance?
-</summary>
-
-> We are assuming we are already on the network, so we don't need to ask devices if they're up or not with a ping, we can ask them who they are with an ARP request.
-</details>
-
-
-</details>
-
-## Netscanning With Python
-
-*This simple network scanner will function similar to Kali Linux's Net Discover*
-
-<details> 
-  <summary>For this scanner I am going to send out ARP requests instead of pinging. Why is this preferrable in this instance?
-</summary>
-
-> We are assuming we are already on the network, so we don't need to ask devices if they're up or not with a ping, we can ask them who they are with an ARP request.
-</details>
-
-<details> 
-  <summary>Why does the python script broadcast to "ff:ff:ff:ff:ff:ff"?
-</summary>
-
-> When we don't know the MAC address we use the broadcast MAC destination as "ff:ff:ff:ff:ff:ff" as a place holder, so this message will reach all computers on our network. Once we get a reply from a device, we replace "ff:ff:ff:ff:ff:ff" with the known MAC address.
-</details>
