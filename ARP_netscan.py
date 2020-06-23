@@ -3,11 +3,6 @@
 
 # scapy module lets us work with network packets
 import scapy.all as scapy
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
 def py_scan(ip):
 
     # what subnet are we scanning?
