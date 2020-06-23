@@ -67,9 +67,25 @@ Now that we have a few devices to target it, let's use an ARP attack to see what
 
 The reason this works is because clients accept responses even if they did not send a request, and clients do not verify the ARP responses.
 
-Please note this script needs to be run against other clients that share our same IP default gateway address. A quick way to check our default gateway is
+Below you will find the break down of an ARP attacker
 
-    ip route | grep default
+1. This is the target machine, IP 10.0.2.4
+
+[ARP Spoofer Target](./image/target_ip.py)
+
+    Note that the following command provides the gateway router address.
+
+> ip route | grep default
+
+2. Here is the IP address of the machine we will be running our Spoof attack from. These two machines share the same subnet and gateway router.
+
+[ARP Attacker](./image/attack_hostname_gatrway.png)
+
+3. When we run an ARP scan from our attack client we find a number of machines, including the one we want to attack
+
+[ARP Scan](./image/arp_scan.png)
+
+
 
 Note that in this example I am attacking another one of my own clients. This is not to be used on a machine that you do not own.
 
