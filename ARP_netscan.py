@@ -3,8 +3,11 @@
 
 # scapy module lets us work with network packets
 import scapy.all as scapy
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 def py_scan(ip):
 
     # what subnet are we scanning?
@@ -18,6 +21,7 @@ def py_scan(ip):
 
     # Now lets catch the responses in a variable
     # note that we timeout after one second so our script doesnt just hang, waiting for a response
+<<<<<<< Updated upstream
     responses = scapy.srp(arp_request_packet, timeout=1)[0]
 
     # lets see who responded with a scapy function called .summary()
@@ -29,3 +33,12 @@ def py_scan(ip):
         print("-------------------------------------------")
 
 py_scan("10.0.2.0/24")
+=======
+    responses, ignored = scapy.srp(arp_request_packet, timeout=1)
+
+    # lets see who responded with a scapy function called .summary()
+    print(responses.summary())
+
+
+py_scan("10.0.2.1/24")
+>>>>>>> Stashed changes
