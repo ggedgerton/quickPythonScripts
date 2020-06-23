@@ -69,22 +69,26 @@ The reason this works is because clients accept responses even if they did not s
 
 Below you will find the break down of an ARP attacker
 
-1. This is the target machine, IP 10.0.2.4
-
-[ARP Spoofer Target](./image/target_ip.py)
-
-    Note that the following command provides the gateway router address.
-
-> ip route | grep default
-
-2. Here is the IP address of the machine we will be running our Spoof attack from. These two machines share the same subnet and gateway router.
+1. Here is IP address of our attack machine at 10.0.2.15 and our shared gateway router IP at 10.0.2.1
 
 [ARP Attacker](./image/attack_hostname_gatrway.png)
 
-3. When we run an ARP scan from our attack client we find a number of machines, including the one we want to attack
+
+2. When we run an ARP scan from our attack client we find a number of machines, including the one we want to attack
 
 [ARP Scan](./image/arp_scan.png)
 
+
+3. I want to target my own client machine
+
+[ARP Spoof Target](./image/target_ip.png)
+
+    note that my attack and target clients share the same gateway router
+
+
+4. Now we can launch the attack and gain MitM access
+
+[ARP Attack](./image/spoof_attack.png)
 
 
 Note that in this example I am attacking another one of my own clients. This is not to be used on a machine that you do not own.
