@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import scapy.all as scapy
 import time
@@ -28,7 +28,7 @@ def spoof(target_ip, gateway_ip):
     scapy.send(packet)
 
 
-target_ip = "10.0.2.4"
+target_ip = "10.0.2.3"
 gateway_ip = "10.0.2.1"
 sent = 0
 
