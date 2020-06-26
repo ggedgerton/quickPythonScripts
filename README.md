@@ -66,7 +66,7 @@ Now that we have a few devices to target, let's use an ARP attack to see what we
   <summary><b>What is an ARP spoofing attack and why would anyone do it?</b>
 </summary>
 
-> In an ARP spoofing attack often called a Man in the Middle attack, the attacker's device uses the ARP protocol to claim that it is a different machine on the network-- often disgusing itself as the router. Then other machines on the network send their traffic to the attacker's device instead of the real router, allowing the attacker to read any unencrypted information sent its way. This attack is used to steal confdential data.
+> In an ARP spoofing attack, often called a Man in the Middle attack, the attacker's device uses the ARP protocol to claim that it is a different machine on the network-- often disgusing itself as the router. Then other machines on the network send their traffic to the attacker's device instead of the real router, allowing the attacker to read any unencrypted information sent its way. This attack is used to steal confdential data.
 </details><p>
 
 </p>
