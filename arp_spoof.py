@@ -28,7 +28,7 @@ def spoof(target_ip, gateway_ip):
     scapy.send(packet)
 
 
-target_ip = "10.0.2.3"
+target_ip = "10.0.2.15"
 gateway_ip = "10.0.2.1"
 sent = 0
 
