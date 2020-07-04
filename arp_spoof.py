@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+
+# you must use this command to forward packets echo 1 > /proc/sys/net/ipv4/ip_forward 
 import scapy.all as scapy
 import time
 import sys
