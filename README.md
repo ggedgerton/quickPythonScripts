@@ -12,7 +12,7 @@ Three scripts to get you started with your adventure into the world of Cyber Sec
 
 2. **ARP Spoofing** with Python
 
-- arp_spoof.py is essentially a proof of concept for a man in the middle attack on confidentiality. We don't look at the contents of any packets here-- we have [another script](https://github.com/ggedgerton/MitMandMe) for that--  but witht this file we do convince a target machine that **our** machine is the router it should be talking to. This script is also a great way to get blacklisted on ACLs, so...
+- arp_spoof.py is essentially a proof of concept for a man in the middle attack on confidentiality. We don't look at the contents of any packets here-- we have [another script](https://github.com/ggedgerton/MitMandMe) for that--  but with this file we do convince a target machine that **our** machine is the router it should be talking to. This script is also a great way to get blocklisted on ACLs, so...
 
 3. **MAC Address Spoofing** with Python
 
