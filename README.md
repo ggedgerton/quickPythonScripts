@@ -1,37 +1,40 @@
 # Python Tutorials for Security Engineers
 
-Three scripts to get you started with your adventure into the world of Cyber Security
+Three scripts to get you started with your adventure into the world of Cyber Security-- specfically ARP and its use for Man in the Middle attacks. Developed and tested on Kali Linux.
 
 ***
 
-## So where do we start
+## So where do we start?
 
 1. **Network Scanning** with Python
 
-  - First we want to see what's out there on the network
+  - First we want to see what's out there on the network, using ARP_netscan.py to return a list of IP addresses on our subnet.
 
 2. **ARP Spoofing** with Python
 
-- This is a man in the middle attack on confidentiality and a great way to get blacklisted on ACLs, so...
+- arp_spoof.py is essentially a proof of concept for a man in the middle attack on confidentiality. We don't look at the contents of any packets here-- we have [another script](https://github.com/ggedgerton/MitMandMe) for that--  but with this file we do convince a target machine that **our** machine is the router it should be talking to. This script is also a great way to get blocklisted on ACLs, so...
 
 3. **MAC Address Spoofing** with Python
 
-- So we got caught ARP spoofing and now we want to try again, let's change our MAC and get back at it
+- So we got caught ARP spoofing in steps one and two-- now we want to cover our tracks and try again. With this script, we can change our MAC address, pretend we're a whole new device, and get back at it.
 
 - - -
 
 ## Netscanning With Python
 
-*This simple network scanner will function similar to Kali Linux's Net Discover*
+*This simple network scanner functions much like 
+Kali Linux's built-in netdiscover command.*
+
+Our scanner uses ARP requests instead of pings to discover what hosts are running on the netwrok.
 
 <details> 
-  <summary>For this scanner I am going to send out ARP requests instead of pinging. Why is an ARP request preferrable in this instance?
+<summary><B>Why is an ARP request preferrable in this instance?</B>
 </summary>
 
-> We are assuming we are already on the network, so we don't need to ask devices if they're up or not with a ping, we can ask them who they are with an ARP request.
-</details>
+> ARP is an automated part of the day-to-day functioning of many network devices, so blue teamers are less likely to flag it in their logs and investigate us. ARP requests are also less likely to be blocked by firewall rules.
+</details></p>
 
-**netdiscover built in Kali tool**
+Here's what we'd expect to find using the built-in Kali tool **netdiscover**.
 
 ![netdiscover -r subnet](./image/netd_cmd.png)
 
@@ -41,74 +44,69 @@ Three scripts to get you started with your adventure into the world of Cyber Sec
 
     netdiscover outputs the subnet IP and MAC addresses of other devices on our network
 
-
-Check out this Python script for [Network Scanning](/ARP_netscan.py)
+We should get the same output by running [ARP_scanner.py](/ARP_netscan.py). Make sure to change the py_scan variable (at the end of the script) to the address of the subnet you want to scan!
 
 
 <details> 
-  <summary>Why does the python script broadcast to "ff:ff:ff:ff:ff:ff"?
+<summary><b>Why does the python script broadcast to "ff:ff:ff:ff:ff:ff"?</b>
 </summary>
 
-> When we don't know the MAC address we use the broadcast MAC destination as "ff:ff:ff:ff:ff:ff" as a place holder, so this message will reach all computers on our network. Once we get a reply from a device, we replace "ff:ff:ff:ff:ff:ff" with the known MAC address.
-</details>
+> "ff:ff:ff:ff:ff:ff" is the broadcast MAC address, so this message will reach all computers on our network. Once we get a reply from a device, we replace "ff:ff:ff:ff:ff:ff" with the known MAC address, which gets used for the remainder of the script.
+</details><p>
 
-Now that we have a few devices to target it, let's use an ARP attack to see what we can do.
+</p>
+
+Now that we have a few devices to target, let's use an ARP attack to see what we can do.
 
 ***
 
 ## ARP Spoofing 
 
 <details> 
-  <summary>What is an ARP spoofing attack and why would anyone do it?
+  <summary><b>What is an ARP spoofing attack and why would anyone do it?</b>
 </summary>
 
-> An attacker will target the subnet IP of a target so other devices will confuse the attacker and target, sending data to the attacker instead. It's a way to steal confdential data.
-</details>
+> In an ARP spoofing attack, often called a Man in the Middle attack, the attacker's device uses the ARP protocol to claim that it is a different machine on the network-- often disgusing itself as the router. Then other machines on the network send their traffic to the attacker's device instead of the real router, allowing the attacker to read any unencrypted information sent its way. This attack is used to steal confdential data.
+</details><p>
 
-The reason this works is because clients accept responses even if they did not send a request, and clients do not verify the ARP responses.
+</p>
+
+Clients accept ARP responses even if they did not send a request-- and clients do not verify the ARP responses. Yikes. This means we can claim to be the owner of any IP address we want.
 
 Below you will find the break down of an ARP attacker
 
-1. Here is the IP address of my attack machine at 10.0.2.15 and our shared gateway router IP at 10.0.2.1
+1. Here is the IP address of my attack machine at 10.0.2.15. You can also see the address of the subnet's gateway router at 10.0.2.1. This is the router used by both my computer and the victim machine to access the internet.
 
 ![ARP Attacker](./image/attack_hostname_gatrway.png)
 
 
-2. When we run an ARP scan from our attack client we find a number of machines, including the one we want to attack
+2. When we run an ARP scan of the network from our attack client, we find a number of machines, including the one we want to attack: 10.0.2.4.
 
 ![ARP Scan](./image/arp_scan.png)
 
 
-3. This is the IP Address of the machine I am targetting. I own this machine, this attack is not to be run on a machine you do not own.
+3. This is the IP Address of the machine I am targetting. <p><b>IMPORTANT: I own this target machine. Do not execute this attack against any machine that is not yours without explicit written permission.</b>
 
 ![ARP Spoof Target](./image/target_ip.png)
 
-    note that my attack and target clients share the same gateway router
+<i>Again, note that my attack and target clients share the same gateway router</i>
 
 
-4. Now we can launch the attack and gain MitM access
+4. With this information, we can launch the attack and gain Man in the Middle access.
 
 ![ARP Attack](./image/spoof_attack.png)
 
 
-This scripts sends alternating packets to our gateway router and our target machine. We are telling the gateway router to associate the target IP with our MAC and we are telling the target to associate the gateway IP with our MAC. That way traffic flows through us.
-
-[ARP Spoofer Script](/arp_spoof.py)
+[This script](/arp_spoof.py) sends alternating packets to our gateway router and our target machine; these ARP packets match our MAC address to two different IP addresses. That is, we are telling the gateway router that our machine has the victim's IP address, and we are telling the victim that our machine has the gateway router's IP address. That way, traffic back and forth from the victim to the router flows through us.
 
 ***
 
 ## Mac Address Spoofing
 
-<details> 
-  <summary>Why do we want to spoof a MAC Address?</summary>
 
+Sometimes, we need to spoof our MAC address to bypass certain Access Control Lists that may have caught on to our bad behavior. We can do this at the command line, but why not put it into a script? Here's how.
 
-Spoofing a MAC Address allows us to  bypass certain access control lists 
-
-
-</details>
-
-**How Can We Change Our MAC from the Linux CL?**
+### Command line method:
 
 1. Check our MAC Address
 
@@ -126,19 +124,18 @@ Spoofing a MAC Address allows us to  bypass certain access control lists
     
      My new MAC address is 66:55:44:33:22:11
 
+How do we do this in Python? Why, there's a module for that!
+
+>[This module](https://docs.python.org/3/library/subprocess.html) will let us use command line arguments in our python script
+
+> We get the desired MAC address and network interface from the user during the execution of the script by using the input() function.
+
+
+Check out the Mac Changer Script [here](/MACchanger.py).
+
 <details> 
-  <summary>So what tools/libraries/modules can we use in Python to automate this process?</summary>
-
->This [module](https://docs.python.org/3/library/subprocess.html) will let us use command line arguments in our python script
-> How do we get user input?
-
-</details>
-
-[Mac Changer Script](/MACchanger.py)
-
-<details> 
-  <summary>Besides the obvious <i>allows us to bypass ACL</i>, why would a hack spoof a MAC address?
+  <summary>Besides bypassing ACLs, why else might a hacker spoof their MAC address?
   </summary>
 
-> To hide on a network or impersonate another device.
+> To hide themselves on a network or impersonate another device.
 </details>
