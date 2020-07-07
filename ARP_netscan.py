@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# alternate to netdiscover
-
 
 # scapy module lets us work with network packets
 import scapy.all as scapy
