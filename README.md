@@ -40,7 +40,7 @@ Here's what we'd expect to find using the built-in Kali tool **netdiscover**.
 
     Note that we are giving netdiscover our own subnet
 
-![netdiscover output](./image/netd_output.png)
+![netdiscover output](./image/netd_output.pn)
 
     netdiscover outputs the subnet IP and MAC addresses of other devices on our network
 
